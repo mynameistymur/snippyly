@@ -14,6 +14,16 @@
     <title>Snippyly</title>
 
     <style>
+        .wrap {
+            padding: 32px; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            gap: 32px 32px;
+        }
+
+
         * {
             margin: 0;
             padding: 0;
@@ -30,13 +40,12 @@
             border-radius: 53px;
             display: inline-flex;
             justify-content: left;
-            gap: 1em;
+            gap: 8px;
             flex-basis: auto;
         }
 
         .toolbar-icon {
             width: 32px;
-            padding: 6px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -83,43 +92,67 @@
 </head>
 
 <body>
+    <div class="wrap">
 
-    <!-- Toolbar -->
-    <div class="toolbar">
-        <div class="toolbar-icon">
-            <img src="https://drive.google.com/uc?export=view&id=11YNkGfFTvs4wutBMcM7oB0XmVR3Cbdno">
+
+
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <div class="toolbar-icon">
+                <img src="https://drive.google.com/uc?export=view&id=11YNkGfFTvs4wutBMcM7oB0XmVR3Cbdno">
+            </div>
+            <div class="toolbar-logo">
+                <img src="https://drive.google.com/uc?export=view&id=1x4HyR7dk3bbCXoeWS-Sy8NZ_EI-f6nR2">
+            </div>
+            <div class="toolbar-divider-wrap">
+                <div class="toolbar-divider"></div>
+            </div>
+            <div class="toolbar-button">
+                <a href="#">
+                    Sign up
+                </a>
+            </div>
+            <div class="toolbar-divider-wrap">
+                <div class="toolbar-divider"></div>
+            </div>
+            <div class="toolbar-icon">
+                <img src="https://drive.google.com/uc?export=view&id=1Xylra7RP2hAnJL8TmTADOASlqnydL-JW" />
+            </div>
         </div>
-        <div class="toolbar-logo">
-            <img src="https://drive.google.com/uc?export=view&id=1x4HyR7dk3bbCXoeWS-Sy8NZ_EI-f6nR2">
+
+        <div class="toolbar">
+            <div class="toolbar-icon">
+                <img src="https://drive.google.com/uc?export=view&id=11YNkGfFTvs4wutBMcM7oB0XmVR3Cbdno">
+            </div>
+            <div class="toolbar-logo">
+                <img src="https://drive.google.com/uc?export=view&id=1x4HyR7dk3bbCXoeWS-Sy8NZ_EI-f6nR2">
+            </div>
+            <div class="toolbar-divider-wrap">
+                <div class="toolbar-divider"></div>
+            </div>
+        <div class="toolbar-avatars">
+            *avatars*
         </div>
         <div class="toolbar-divider-wrap">
             <div class="toolbar-divider"></div>
         </div>
-        <div class="toolbar-button">
-            <a href="#">
-                Sign up
-            </a>
+        <div class="toolbar-actions">
+            *actions*
         </div>
         <div class="toolbar-divider-wrap">
             <div class="toolbar-divider"></div>
         </div>
+        <div class="toolbar-actions2">
+            *actions 2*
+        </div>
         <div class="toolbar-icon">
-            <img src="https://drive.google.com/uc?export=view&id=1Xylra7RP2hAnJL8TmTADOASlqnydL-JW"/>
+            <img src="https://drive.google.com/uc?export=view&id=1Xylra7RP2hAnJL8TmTADOASlqnydL-JW" />
         </div>
     </div>
 
-    <!-- <div class="toolbar">
-        <div class="toolbar-arrow"></div>
-        <div class="toolbar-logo"></div>
-        <div class="toolbar-divider"></div>
-        <div class="toolbar-avatars"></div>
-        <div class="toolbar-divider"></div>
-        <div class="toolbar-actions"></div>
-        <div class="toolbar-divider"></div>
-        <div class="toolbar-actions2"></div>
-        <div class="toolbar-useractions"></div>
-    </div> -->
 
+
+    </div>
 </body>
 
 </html>
