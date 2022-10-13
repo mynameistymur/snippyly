@@ -29,64 +29,170 @@
             padding: 0;
             font-family: 'Poppins', sans-serif;
             font-style: normal;
-            font-size: 16px;
+            font-size: 14px;
+            line-height: 1.14em;
         }
 
         .toolbar {
-            padding: 16px;
+            padding: 1.14em;
             background: #FFFFFF;
             border: 1px solid #E6E8EC;
             box-shadow: 0px 8px 16px rgba(143, 149, 178, 0.15);
-            border-radius: 53px;
+            border-radius: 3.78em;
             display: inline-flex;
             justify-content: left;
-            gap: 8px;
+            gap: 0.57em;
             flex-basis: auto;
         }
 
-        .toolbar-icon {
-            width: 32px;
+        .toolbar-section,
+        .toolbar-avatars,
+        .toolbar-actions,
+        .toolbar-actions1,
+        .toolbar-actions2,
+        .action,
+        .action1
+        {
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        .toolbar-icon {
+            width: 24px;
+            height: 24px;
+            padding: 4px;
+        }
+
+        .toolbar-icon.extra-small {
+            width: 16px;
+            height: 16px;
+        }
+
+        .toolbar-icon.small {
+            width: 20px;
+            height: 20px;
+            padding: 6px;
         }
 
         .toolbar-logo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .toolbar-logo img {
-            height: 25px;
-        }
-
-        .toolbar-divider-wrap {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            height: 1.82em;
         }
 
         .toolbar-divider {
             width: 1px;
-            height: 22px;
+            height: 1.57em;
             flex-grow: 0;
-            border-radius: 8px;
+            border-radius: 0.57em;
             background-color: #d4d6df;
         }
 
         .toolbar-button {
+            display: block;
             background: #625DF5;
-            border-radius: 50px;
-            padding: 8px 16px;
+            border-radius: 4em;
+            padding: 0.78em 1.28em;
+            text-decoration: none;
+            color: #FFFFFF;
         }
 
         .toolbar-button a {
             text-decoration: none;
             color: #FFFFFF;
             font-weight: 400;
-            font-size: 14px;
-            line-height: 16px;
+            font-size: 1em;
+            line-height: 1.14em;
+        }
+
+        .toolbar-avatars {
+            margin: 0px 6px;
+        }
+
+        .avatar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 3.42em;
+        }
+
+        .avatar.blue {
+            border: 2px solid #3772FF;
+        }
+
+        .avatar.gray {
+            border: 2px solid #B1B5C3;
+        }
+
+        .avatar.yellow {
+            border: 2px solid #FFD166;
+        }
+
+        .avatar-img,
+        .avatar-text {
+            border-radius: 3.42em;
+            width: 32px;
+            height: 32px;
+        }
+
+        .avatar-text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #FFFFFF;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.79em;
+            line-height: 1.71em;
+        }
+
+        .avatar.overlapped {
+            margin: 0px -6px;
+        }
+
+        .avatar-text.yellow {
+            background-color: #FFD166;
+            
+        }
+
+        .avatar-text.more {
+            color: #000000 !important;
+        }
+
+        .toolbar-actions {
+            padding: 0px 4px !important;
+            gap: 4px;
+        }
+
+        .action.dropdown {
+            padding: 0px 6px;
+        }
+
+        .toolbar-actions1 {
+            padding: 0px 8px !important;
+            gap: 8px;
+        }
+
+        .toolbar-actions2 {
+            gap: 8px;
+        }
+
+        .action1 {
+            padding: 4px 8px;
+            border: 1px solid #D4D6DF;
+            border-radius: 50px;
+        }
+        
+        .action-text {
+            margin: 0px 8px 0px 4px;
+            color: #8F95B2;
+        }
+
+        .toolbar-img {
+            width: 32px;
+            height: 32px;
         }
     </style>
 </head>
@@ -94,64 +200,129 @@
 <body>
     <div class="wrap">
 
-
-
         <!-- Toolbar Small -->
         <div class="toolbar">
-            <div class="toolbar-icon">
-                <img src="https://drive.google.com/uc?export=view&id=11YNkGfFTvs4wutBMcM7oB0XmVR3Cbdno">
+            <div class="toolbar-section">
+                <img class="toolbar-icon small"
+                    src="https://drive.google.com/uc?export=view&id=11YNkGfFTvs4wutBMcM7oB0XmVR3Cbdno">
             </div>
-            <div class="toolbar-logo">
-                <img src="https://drive.google.com/uc?export=view&id=1x4HyR7dk3bbCXoeWS-Sy8NZ_EI-f6nR2">
+            <div class="toolbar-section">
+                <img class="toolbar-logo"
+                    src="https://drive.google.com/uc?export=view&id=1x4HyR7dk3bbCXoeWS-Sy8NZ_EI-f6nR2">
             </div>
-            <div class="toolbar-divider-wrap">
+            <div class="toolbar-section">
                 <div class="toolbar-divider"></div>
             </div>
-            <div class="toolbar-button">
-                <a href="#">
+            <div class="toolbar-section">
+                <a class="toolbar-button " href="#">
                     Sign up
                 </a>
             </div>
-            <div class="toolbar-divider-wrap">
+            <div class="toolbar-section">
                 <div class="toolbar-divider"></div>
             </div>
-            <div class="toolbar-icon">
-                <img src="https://drive.google.com/uc?export=view&id=1Xylra7RP2hAnJL8TmTADOASlqnydL-JW" />
+            <div class="toolbar-section">
+                <img class="toolbar-icon"
+                    src="https://drive.google.com/uc?export=view&id=1Xylra7RP2hAnJL8TmTADOASlqnydL-JW" />
             </div>
         </div>
+
 
         <!-- Toolbar Large -->
         <div class="toolbar">
-            <div class="toolbar-icon">
-                <img src="https://drive.google.com/uc?export=view&id=11YNkGfFTvs4wutBMcM7oB0XmVR3Cbdno">
+
+            <div class="toolbar-section">
+                <img class="toolbar-icon small"
+                    src="https://drive.google.com/uc?export=view&id=11YNkGfFTvs4wutBMcM7oB0XmVR3Cbdno">
             </div>
-            <div class="toolbar-logo">
-                <img src="https://drive.google.com/uc?export=view&id=1x4HyR7dk3bbCXoeWS-Sy8NZ_EI-f6nR2">
+
+            <div class="toolbar-section">
+                <img class="toolbar-logo"
+                    src="https://drive.google.com/uc?export=view&id=1x4HyR7dk3bbCXoeWS-Sy8NZ_EI-f6nR2">
             </div>
-            <div class="toolbar-divider-wrap">
+
+            <div class="toolbar-section">
                 <div class="toolbar-divider"></div>
             </div>
-            <div class="toolbar-avatars">
-                *avatars*
+
+            <div class="toolbar-section">
+                <div class="toolbar-avatars">
+                    <div class="avatar blue overlapped">
+                        <img class="avatar-img"
+                            src="https://drive.google.com/uc?export=view&id=1QHXtKZg8I7-wIapZJDs-x8YenlHMvzP4">
+                    </div>
+                    <div class="avatar gray overlapped">
+                        <img class="avatar-img"
+                            src="https://drive.google.com/uc?export=view&id=19Q76zC8mmLXjnMoRqio6EVtfO4AoB-hm">
+                    </div>
+                    <div class="avatar yellow overlapped">
+                        <div class="avatar-text yellow">K</div>
+                    </div>
+                    <div class="avatar overlapped">
+                        <div class="avatar-text more">+2</div>
+                    </div>
+                </div>
             </div>
-            <div class="toolbar-divider-wrap">
+
+            <div class="toolbar-section">
                 <div class="toolbar-divider"></div>
             </div>
-            <div class="toolbar-actions">
-                *actions*
+
+            <div class="toolbar-section">
+                <div class="toolbar-actions">
+                    <div class="action">
+                        <img class="toolbar-icon" src="https://drive.google.com/uc?export=view&id=17FEzGulxL-0zqj-oQOoFsTWrmqPMpmzZ">
+                    </div>
+                    <div class="action dropdown">
+                        <img class="toolbar-icon" src="https://drive.google.com/uc?export=view&id=1WzeZDU9WZmqdFcPFtaMu14CNQ0E_3b4M">
+                        <img class="toolbar-icon extra-small" src="https://drive.google.com/uc?export=view&id=1D6FZoGu5_LfZELHESo9igEEZjnUjQp7n">
+                    </div>
+                    <div class="action dropdown">
+                        <img class="toolbar-icon" src="https://drive.google.com/uc?export=view&id=1f37pqomXr07SnjWqV4sokM-kWJ0I3X6q">
+                        <img class="toolbar-icon extra-small" src="https://drive.google.com/uc?export=view&id=1D6FZoGu5_LfZELHESo9igEEZjnUjQp7n">
+                    </div>
+                </div>
             </div>
-            <div class="toolbar-divider-wrap">
+
+            <div class="toolbar-section">
                 <div class="toolbar-divider"></div>
             </div>
-            <div class="toolbar-actions2">
-                *actions 2*
+
+            <div class="toolbar-section">
+                <div class="toolbar-actions1">
+                    <div class="action1">
+                        <img class="toolbar-icon" src="https://drive.google.com/uc?export=view&id=1SV6vJ4dKBCNVkv9xS5WjjJbzc7A5jZ43">
+                        <p class="action-text">4</p>
+                    </div>
+                    <div class="action1 dropdown">
+                        <img class="toolbar-icon" src="https://drive.google.com/uc?export=view&id=1tuAcS9RsgQXcjxV_TF_1bn7THu1iJzKh">
+                        <p class="action-text">All</p>
+                        <img class="toolbar-icon extra-small" src="https://drive.google.com/uc?export=view&id=1D6FZoGu5_LfZELHESo9igEEZjnUjQp7n">
+                    </div>
+                </div>
             </div>
-            <div class="toolbar-icon">
-                <img src="https://drive.google.com/uc?export=view&id=1Xylra7RP2hAnJL8TmTADOASlqnydL-JW" />
+
+            <div class="toolbar-section">
+                <div class="toolbar-divider"></div>
             </div>
+
+            <div class="toolbar-section">
+                <div class="toolbar-actions2">
+                    <div class="action">
+                        <img class="toolbar-icon" src="https://drive.google.com/uc?export=view&id=1ITAJwA5slWfFHLiWT2slaHvj6jlLLiw5">
+                    </div>
+                    <div class="action">
+                        <img class="toolbar-img" src="https://drive.google.com/uc?export=view&id=19Q76zC8mmLXjnMoRqio6EVtfO4AoB-hm">
+                    </div>
+                </div>
+            </div>
+
+            <div class="toolbar-section">
+                <img class="toolbar-icon"
+                    src="https://drive.google.com/uc?export=view&id=1Xylra7RP2hAnJL8TmTADOASlqnydL-JW" />
+            </div>
+
         </div>
-
-
 
     </div>
 </body>
