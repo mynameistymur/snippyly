@@ -33,6 +33,7 @@
             line-height: 1.14em;
         }
 
+
         .toolbar {
             padding: 1.14em;
             background: #FFFFFF;
@@ -51,28 +52,59 @@
         .toolbar-actions1,
         .toolbar-actions2,
         .action,
-        .action1
-        {
+        .action-border {
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
+        .toolbar-icon-context,
         .toolbar-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50px;
+            fill: #8F95B2;
+            cursor: pointer;
+        }
+
+        .toolbar-icon:hover {
+            background: #EAE8F9;
+        }
+
+        .toolbar-icon:active {
+            fill: #FFFFFF;
+            background: #625DF5;
+        }
+
+        .toolbar-icon-border {
             width: 24px;
             height: 24px;
-            padding: 4px;
+            fill: #8F95B2;
+            cursor: pointer;
         }
 
-        .toolbar-icon.extra-small {
+        .toolbar-icon-arrow {
+            width: 32px;
+            height: 32px;
+            fill: #8F95B2;
+            cursor: pointer;
+        }
+
+        .toolbar-icon-arrow:active {
+            transition: 0.3s;
+            transform: rotate(90deg);
+        }
+
+        .toolbar-icon-dropdown-arrow {
             width: 16px;
             height: 16px;
+            fill: #8F95B2;
+            cursor: pointer;
         }
 
-        .toolbar-icon.small {
-            width: 20px;
-            height: 20px;
-            padding: 6px;
+        .toolbar-icon-dropdown-arrow:active {
+            transition: 0.3s;
+            transform: rotate(-90deg);
         }
 
         .toolbar-logo {
@@ -154,7 +186,7 @@
 
         .avatar-text.yellow {
             background-color: #FFD166;
-            
+
         }
 
         .avatar-text.more {
@@ -179,12 +211,28 @@
             gap: 8px;
         }
 
-        .action1 {
+        .action-border {
             padding: 4px 8px;
             border: 1px solid #D4D6DF;
             border-radius: 50px;
+            cursor: pointer;
         }
-        
+
+        .action-border:hover, .action-border:hover * {
+            background: #EAE8F9;
+            border-color: rgba(98, 93, 245, 1);
+            color: #625DF5;
+            fill: #625DF5;
+        }
+
+        .action-border:active, .action-border:active * {
+            background: #625DF5;
+            border-color: #625DF5;
+            color: #FFFFFF;
+            fill: #FFFFFF;
+        }
+       
+
         .action-text {
             margin: 0px 8px 0px 4px;
             color: #8F95B2;
@@ -200,11 +248,13 @@
 <body>
     <div class="wrap">
 
-        <!-- Toolbar Small -->
+        <!-- TOOLBAR SMALL -->
         <div class="toolbar">
             <div class="toolbar-section">
-                <img class="toolbar-icon small"
-                    src="https://drive.google.com/uc?export=view&id=11YNkGfFTvs4wutBMcM7oB0XmVR3Cbdno">
+                <svg class="toolbar-icon-arrow" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.1607 12.4941C13.8353 12.8195 13.8353 13.3472 14.1607 13.6726L16.4882 16L14.1607 18.3274C13.8353 18.6528 13.8353 19.1805 14.1607 19.5059C14.4862 19.8314 15.0138 19.8314 15.3393 19.5059L18.2559 16.5893C18.5814 16.2638 18.5814 15.7362 18.2559 15.4107L15.3393 12.4941C15.0138 12.1686 14.4862 12.1686 14.1607 12.4941Z" />
+                </svg>
             </div>
             <div class="toolbar-section">
                 <img class="toolbar-logo"
@@ -222,18 +272,25 @@
                 <div class="toolbar-divider"></div>
             </div>
             <div class="toolbar-section">
-                <img class="toolbar-icon"
-                    src="https://drive.google.com/uc?export=view&id=1Xylra7RP2hAnJL8TmTADOASlqnydL-JW" />
+                <svg class="toolbar-icon-context" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M14 23C14 24.1 14.9 25 16 25C17.1 25 18 24.1 18 23C18 21.9 17.1 21 16 21C14.9 21 14 21.9 14 23ZM14 9C14 10.1 14.9 11 16 11C17.1 11 18 10.1 18 9C18 7.9 17.1 7 16 7C14.9 7 14 7.9 14 9ZM14 16C14 17.1 14.9 18 16 18C17.1 18 18 17.1 18 16C18 14.9 17.1 14 16 14C14.9 14 14 14.9 14 16Z" />
+                </svg>
             </div>
         </div>
 
 
-        <!-- Toolbar Large -->
+
+
+        <!-- TOOLBAR LARGE -->
         <div class="toolbar">
 
+            <!-- icon + logo -->
             <div class="toolbar-section">
-                <img class="toolbar-icon small"
-                    src="https://drive.google.com/uc?export=view&id=11YNkGfFTvs4wutBMcM7oB0XmVR3Cbdno">
+                <svg class="toolbar-icon-arrow" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.1607 12.4941C13.8353 12.8195 13.8353 13.3472 14.1607 13.6726L16.4882 16L14.1607 18.3274C13.8353 18.6528 13.8353 19.1805 14.1607 19.5059C14.4862 19.8314 15.0138 19.8314 15.3393 19.5059L18.2559 16.5893C18.5814 16.2638 18.5814 15.7362 18.2559 15.4107L15.3393 12.4941C15.0138 12.1686 14.4862 12.1686 14.1607 12.4941Z" />
+                </svg>
             </div>
 
             <div class="toolbar-section">
@@ -241,10 +298,12 @@
                     src="https://drive.google.com/uc?export=view&id=1x4HyR7dk3bbCXoeWS-Sy8NZ_EI-f6nR2">
             </div>
 
+            <!-- divider -->
             <div class="toolbar-section">
                 <div class="toolbar-divider"></div>
             </div>
 
+            <!-- avatars -->
             <div class="toolbar-section">
                 <div class="toolbar-avatars">
                     <div class="avatar blue overlapped">
@@ -264,62 +323,109 @@
                 </div>
             </div>
 
+            <!-- divider -->
             <div class="toolbar-section">
                 <div class="toolbar-divider"></div>
             </div>
 
+            <!-- actions -->
             <div class="toolbar-section">
                 <div class="toolbar-actions">
                     <div class="action">
-                        <img class="toolbar-icon" src="https://drive.google.com/uc?export=view&id=17FEzGulxL-0zqj-oQOoFsTWrmqPMpmzZ">
+                        <svg class="toolbar-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M17.7608 6.03888C21.6888 6.64595 24.7153 9.3481 25.7503 13.1722C26.0832 14.4028 26.0832 16.5981 25.7503 17.8287C24.8136 21.2897 22.3047 23.7986 18.8437 24.7353C18.1546 24.9217 17.6783 24.9695 16.5154 24.9685C14.9367 24.9672 14.1823 24.8254 12.8496 24.2792L12.1364 23.9869L9.93697 24.5342C7.8786 25.0464 7.71866 25.071 7.44436 24.917C6.90064 24.6118 6.90443 24.3818 7.49147 22.0353L8.03021 19.8823L7.73728 19.1677C7.19053 17.8336 7.04867 17.0796 7.04737 15.5005C7.0464 14.3376 7.09415 13.8613 7.28063 13.1722C8.21127 9.73361 10.737 7.1939 14.1308 6.28405C14.9298 6.06985 17.0392 5.92745 17.7608 6.03888ZM14.2233 8.05664C12.9452 8.46912 12.019 9.04056 11.0373 10.0223C9.57907 11.4805 8.85364 13.0991 8.75174 15.1214C8.68947 16.3572 8.85884 17.3544 9.31582 18.4435C9.47381 18.8201 9.65855 19.2624 9.72624 19.4266C9.82922 19.6761 9.78471 19.9865 9.45432 21.3204C9.23688 22.1979 9.06827 22.9251 9.07953 22.9364C9.09079 22.9476 9.81796 22.779 10.6955 22.5616C12.0294 22.2312 12.3398 22.1867 12.5893 22.2897C12.7535 22.3573 13.1958 22.5421 13.5724 22.7001C14.6615 23.1571 15.6587 23.3264 16.8945 23.2642C18.9168 23.1623 20.5354 22.4368 21.9936 20.9786C22.968 20.0042 23.5361 19.0878 23.9685 17.7926C24.2112 17.0656 24.2457 16.7805 24.2457 15.5005C24.2457 14.2204 24.2112 13.9353 23.9685 13.2083C23.5361 11.9132 22.968 10.9967 21.9936 10.0223C20.3414 8.37025 18.566 7.66777 16.2447 7.74769C15.3595 7.77823 14.8403 7.8575 14.2233 8.05664Z" />
+                        </svg>
                     </div>
                     <div class="action dropdown">
-                        <img class="toolbar-icon" src="https://drive.google.com/uc?export=view&id=1WzeZDU9WZmqdFcPFtaMu14CNQ0E_3b4M">
-                        <img class="toolbar-icon extra-small" src="https://drive.google.com/uc?export=view&id=1D6FZoGu5_LfZELHESo9igEEZjnUjQp7n">
+                        <svg class="toolbar-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.71864 16.9896V14.818H7.01864V16.9896H8.71864ZM22.6546 14.818V17.5716H24.3546V14.818H22.6546ZM15.6866 7.85C19.5349 7.85 22.6546 10.9697 22.6546 14.818H24.3546C24.3546 10.0308 20.4738 6.15 15.6866 6.15V7.85ZM8.71864 14.818C8.71864 10.9697 11.8383 7.85 15.6866 7.85V6.15C10.8994 6.15 7.01864 10.0308 7.01864 14.818H8.71864ZM6.15 19.6326V20.8987H7.85V19.6326H6.15ZM13.062 22.636V17.8953H11.362V22.636H13.062ZM10.4747 25.2233C11.9036 25.2233 13.062 24.0649 13.062 22.636H11.362C11.362 23.126 10.9647 23.5233 10.4747 23.5233V25.2233ZM6.15 20.8987C6.15 23.2871 8.08622 25.2233 10.4747 25.2233V23.5233C9.0251 23.5233 7.85 22.3482 7.85 20.8987H6.15ZM10.4747 15.3079C8.08622 15.3079 6.15 17.2441 6.15 19.6326H7.85C7.85 18.183 9.0251 17.0079 10.4747 17.0079V15.3079ZM10.4747 17.0079C10.9647 17.0079 11.362 17.4052 11.362 17.8953H13.062C13.062 16.4663 11.9036 15.3079 10.4747 15.3079V17.0079ZM23.5233 19.6326V20.8986H25.2233V19.6326H23.5233ZM20.0113 22.636V17.8953H18.3113V22.636H20.0113ZM20.8986 23.5233C20.4086 23.5233 20.0113 23.126 20.0113 22.636H18.3113C18.3113 24.0649 19.4697 25.2233 20.8986 25.2233V23.5233ZM23.5233 20.8986C23.5233 22.3482 22.3482 23.5233 20.8986 23.5233V25.2233C23.2871 25.2233 25.2233 23.2871 25.2233 20.8986H23.5233ZM20.8986 17.0079C22.3482 17.0079 23.5233 18.183 23.5233 19.6326H25.2233C25.2233 17.2441 23.2871 15.3079 20.8986 15.3079V17.0079ZM20.8986 15.3079C19.4697 15.3079 18.3113 16.4663 18.3113 17.8953H20.0113C20.0113 17.4052 20.4086 17.0079 20.8986 17.0079V15.3079Z" />
+                        </svg>
+
+                        <svg class="toolbar-icon-dropdown-arrow" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10.8047 6.5286C10.5444 6.26825 10.1223 6.26825 9.86193 6.5286L8 8.39052L6.13807 6.5286C5.87772 6.26825 5.45561 6.26825 5.19526 6.5286C4.93491 6.78894 4.93491 7.21105 5.19526 7.4714L7.5286 9.80474C7.78894 10.0651 8.21105 10.0651 8.4714 9.80474L10.8047 7.4714C11.0651 7.21105 11.0651 6.78894 10.8047 6.5286Z" />
+                        </svg>
+
                     </div>
                     <div class="action dropdown">
-                        <img class="toolbar-icon" src="https://drive.google.com/uc?export=view&id=1f37pqomXr07SnjWqV4sokM-kWJ0I3X6q">
-                        <img class="toolbar-icon extra-small" src="https://drive.google.com/uc?export=view&id=1D6FZoGu5_LfZELHESo9igEEZjnUjQp7n">
+                        <svg class="toolbar-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16 24C20.4183 24 24 20.4183 24 16C24 11.5817 20.4183 8 16 8C11.5817 8 8 11.5817 8 16C8 20.4183 11.5817 24 16 24ZM16 26C21.5228 26 26 21.5228 26 16C26 10.4772 21.5228 6 16 6C10.4772 6 6 10.4772 6 16C6 21.5228 10.4772 26 16 26Z" />
+                            <path
+                                d="M20 16C20 18.2091 18.2091 20 16 20C13.7909 20 12 18.2091 12 16C12 13.7909 13.7909 12 16 12C18.2091 12 20 13.7909 20 16Z" />
+                        </svg>
+
+                        <svg class="toolbar-icon-dropdown-arrow" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10.8047 6.5286C10.5444 6.26825 10.1223 6.26825 9.86193 6.5286L8 8.39052L6.13807 6.5286C5.87772 6.26825 5.45561 6.26825 5.19526 6.5286C4.93491 6.78894 4.93491 7.21105 5.19526 7.4714L7.5286 9.80474C7.78894 10.0651 8.21105 10.0651 8.4714 9.80474L10.8047 7.4714C11.0651 7.21105 11.0651 6.78894 10.8047 6.5286Z" />
+                        </svg>
                     </div>
                 </div>
             </div>
 
+            <!-- divider -->
             <div class="toolbar-section">
                 <div class="toolbar-divider"></div>
             </div>
 
+            <!-- actions 1 -->
             <div class="toolbar-section">
                 <div class="toolbar-actions1">
-                    <div class="action1">
-                        <img class="toolbar-icon" src="https://drive.google.com/uc?export=view&id=1SV6vJ4dKBCNVkv9xS5WjjJbzc7A5jZ43">
+                    <div class="action-border">
+                        <svg class="toolbar-icon-border" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7608 2.03888C17.6888 2.64595 20.7153 5.3481 21.7503 9.17223C22.0832 10.4028 22.0832 12.5981 21.7503 13.8287C20.8136 17.2897 18.3047 19.7986 14.8437 20.7353C14.1546 20.9217 13.6783 20.9695 12.5154 20.9685C10.9367 20.9672 10.1823 20.8254 8.84963 20.2792L8.13643 19.9869L5.93697 20.5342C3.8786 21.0464 3.71866 21.071 3.44436 20.917C2.90064 20.6118 2.90443 20.3818 3.49147 18.0353L4.03021 15.8823L3.73728 15.1677C3.19053 13.8336 3.04867 13.0796 3.04737 11.5005C3.0464 10.3376 3.09415 9.86128 3.28063 9.17223C4.21127 5.73361 6.73701 3.1939 10.1308 2.28405C10.9298 2.06985 13.0392 1.92745 13.7608 2.03888ZM10.2233 4.05664C8.94525 4.46912 8.01905 5.04056 7.0373 6.02231C5.57907 7.48054 4.85364 9.09914 4.75174 11.1214C4.68947 12.3572 4.85884 13.3544 5.31582 14.4435C5.47381 14.8201 5.65855 15.2624 5.72624 15.4266C5.82922 15.6761 5.78471 15.9865 5.45432 17.3204C5.23688 18.1979 5.06827 18.9251 5.07953 18.9364C5.09079 18.9476 5.81796 18.779 6.69553 18.5616C8.02944 18.2312 8.3398 18.1867 8.5893 18.2897C8.75347 18.3573 9.19583 18.5421 9.57235 18.7001C10.6615 19.1571 11.6587 19.3264 12.8945 19.2642C14.9168 19.1623 16.5354 18.4368 17.9936 16.9786C18.968 16.0042 19.5361 15.0878 19.9685 13.7926C20.2112 13.0656 20.2457 12.7805 20.2457 11.5005C20.2457 10.2204 20.2112 9.93535 19.9685 9.20829C19.5361 7.91315 18.968 6.9967 17.9936 6.02231C16.3414 4.37025 14.566 3.66777 12.2447 3.74769C11.3595 3.77823 10.8403 3.8575 10.2233 4.05664Z" />
+                            </svg>                            
                         <p class="action-text">4</p>
                     </div>
-                    <div class="action1 dropdown">
-                        <img class="toolbar-icon" src="https://drive.google.com/uc?export=view&id=1tuAcS9RsgQXcjxV_TF_1bn7THu1iJzKh">
-                        <p class="action-text">All</p>
-                        <img class="toolbar-icon extra-small" src="https://drive.google.com/uc?export=view&id=1D6FZoGu5_LfZELHESo9igEEZjnUjQp7n">
+                    <div class="action-border dropdown">
+                        <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.99939 16.3333C10.7497 16.3333 12.7055 14.6051 13.8509 13.1658C14.2482 12.6665 14.2482 12.0001 13.8509 11.5009C12.7055 10.0616 10.7497 8.33333 7.99939 8.33333C5.24906 8.33333 3.29326 10.0616 2.14788 11.5009C1.75062 12.0001 1.75062 12.6665 2.14788 13.1658C3.29325 14.6051 5.24906 16.3333 7.99939 16.3333ZM14.8942 13.996C15.6782 13.0108 15.6782 11.6558 14.8942 10.6707C13.6487 9.10551 11.3504 7 7.99939 7C4.64837 7 2.3501 9.10551 1.10458 10.6707C0.320609 11.6558 0.320609 13.0108 1.10458 13.996C2.3501 15.5612 4.64837 17.6667 7.99939 17.6667C11.3504 17.6667 13.6487 15.5612 14.8942 13.996Z" fill="#8F95B2"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.33301 12.3332C9.33301 13.0696 8.73605 13.6665 7.99967 13.6665C7.26329 13.6665 6.66634 13.0696 6.66634 12.3332C6.66634 12.3142 6.66674 12.2954 6.66752 12.2767C6.77144 12.3133 6.88324 12.3332 6.99967 12.3332C7.55196 12.3332 7.99967 11.8855 7.99967 11.3332C7.99967 11.2167 7.97977 11.1049 7.94319 11.001C7.96192 11.0002 7.98075 10.9998 7.99967 10.9998C8.73605 10.9998 9.33301 11.5968 9.33301 12.3332ZM10.6663 12.3332C10.6663 13.8059 9.47243 14.9998 7.99967 14.9998C6.52692 14.9998 5.33301 13.8059 5.33301 12.3332C5.33301 10.8604 6.52692 9.6665 7.99967 9.6665C9.47243 9.6665 10.6663 10.8604 10.6663 12.3332Z" fill="#8F95B2"/>
+                            </svg>                                                                                
+                        <p class="action-text" style="margin-left:4px">All</p>
+                        <svg class="toolbar-icon-dropdown-arrow" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10.8047 6.5286C10.5444 6.26825 10.1223 6.26825 9.86193 6.5286L8 8.39052L6.13807 6.5286C5.87772 6.26825 5.45561 6.26825 5.19526 6.5286C4.93491 6.78894 4.93491 7.21105 5.19526 7.4714L7.5286 9.80474C7.78894 10.0651 8.21105 10.0651 8.4714 9.80474L10.8047 7.4714C11.0651 7.21105 11.0651 6.78894 10.8047 6.5286Z" />
+                        </svg>
                     </div>
                 </div>
             </div>
 
+            <!-- divider -->
             <div class="toolbar-section">
                 <div class="toolbar-divider"></div>
             </div>
 
+            <!-- actions 2 -->
             <div class="toolbar-section">
                 <div class="toolbar-actions2">
                     <div class="action">
-                        <img class="toolbar-icon" src="https://drive.google.com/uc?export=view&id=1ITAJwA5slWfFHLiWT2slaHvj6jlLLiw5">
+                        <svg class="toolbar-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12.9986 14.0398C13.028 14.5913 12.6047 15.0622 12.0532 15.0916C11.3005 15.1318 10.7044 15.1808 10.2385 15.23C9.61292 15.2959 9.23278 15.6802 9.16959 16.233C9.07886 17.0267 9 18.2277 9 19.9999C9 21.7722 9.07886 22.9732 9.16959 23.7669C9.23289 24.3206 9.61207 24.7038 10.2368 24.7697C11.3308 24.8852 13.1392 24.9999 16 24.9999C18.8608 24.9999 20.6692 24.8852 21.7632 24.7697C22.3879 24.7038 22.7671 24.3206 22.8304 23.7669C22.9211 22.9732 23 21.7722 23 19.9999C23 18.2277 22.9211 17.0267 22.8304 16.233C22.7672 15.6802 22.3871 15.2959 21.7615 15.23C21.2956 15.1808 20.6995 15.1318 19.9468 15.0916C19.3953 15.0622 18.972 14.5913 19.0014 14.0398C19.0308 13.4883 19.5017 13.0651 20.0532 13.0945C20.8361 13.1362 21.4669 13.1878 21.9712 13.241C23.4556 13.3975 24.6397 14.4506 24.8175 16.0059C24.9188 16.8922 25 18.1715 25 19.9999C25 21.8284 24.9188 23.1077 24.8175 23.994C24.6398 25.5483 23.4585 26.6019 21.9732 26.7587C20.7919 26.8834 18.9108 26.9999 16 26.9999C13.0892 26.9999 11.2081 26.8834 10.0268 26.7587C8.54151 26.6019 7.36021 25.5483 7.18253 23.994C7.0812 23.1077 7 21.8284 7 19.9999C7 18.1715 7.0812 16.8922 7.18253 16.0059C7.36031 14.4506 8.54436 13.3975 10.0288 13.241C10.5331 13.1878 11.1639 13.1362 11.9468 13.0945C12.4983 13.0651 12.9692 13.4883 12.9986 14.0398Z" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M13.2071 10.2071C12.8166 10.5976 12.1834 10.5976 11.7929 10.2071C11.4024 9.81658 11.4024 9.18342 11.7929 8.79289L15.2929 5.29289C15.6834 4.90237 16.3166 4.90237 16.7071 5.29289L20.2071 8.79289C20.5976 9.18342 20.5976 9.81658 20.2071 10.2071C19.8166 10.5976 19.1834 10.5976 18.7929 10.2071L17 8.41421V18C17 18.5523 16.5523 19 16 19C15.4477 19 15 18.5523 15 18V8.41421L13.2071 10.2071Z" />
+                        </svg>
+
                     </div>
                     <div class="action">
-                        <img class="toolbar-img" src="https://drive.google.com/uc?export=view&id=19Q76zC8mmLXjnMoRqio6EVtfO4AoB-hm">
+                        <img class="toolbar-img"
+                            src="https://drive.google.com/uc?export=view&id=19Q76zC8mmLXjnMoRqio6EVtfO4AoB-hm">
                     </div>
                 </div>
             </div>
 
+            <!-- context menu icon -->
             <div class="toolbar-section">
-                <img class="toolbar-icon"
-                    src="https://drive.google.com/uc?export=view&id=1Xylra7RP2hAnJL8TmTADOASlqnydL-JW" />
+                <svg class="toolbar-icon-context" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M14 23C14 24.1 14.9 25 16 25C17.1 25 18 24.1 18 23C18 21.9 17.1 21 16 21C14.9 21 14 21.9 14 23ZM14 9C14 10.1 14.9 11 16 11C17.1 11 18 10.1 18 9C18 7.9 17.1 7 16 7C14.9 7 14 7.9 14 9ZM14 16C14 17.1 14.9 18 16 18C17.1 18 18 17.1 18 16C18 14.9 17.1 14 16 14C14.9 14 14 14.9 14 16Z" />
+                </svg>
             </div>
 
         </div>
