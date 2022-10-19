@@ -11,442 +11,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
     <title>Snippyly</title>
 
     <style>
-        .wrap {
-            padding: 32px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 32px 32px;
-        }
 
-
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            font-style: normal;
-            font-size: 14px;
-            line-height: 1.14em;
-        }
-
-
-        .toolbar {
-            padding: 1.14em;
-            background: #FFFFFF;
-            border: 1px solid #E6E8EC;
-            box-shadow: 0px 8px 16px rgba(143, 149, 178, 0.15);
-            border-radius: 3.78em;
-            display: inline-flex;
-            justify-content: left;
-            gap: 0.57em;
-            flex-basis: auto;
-        }
-
-        .toolbar-section,
-        .toolbar-avatars,
-        .toolbar-actions,
-        .toolbar-actions1,
-        .toolbar-actions2,
-        .action,
-        .action-border {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .toolbar-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 50px;
-            fill: #8F95B2;
-            cursor: pointer;
-        }
-
-        .toolbar-icon:hover,
-        .action-dropdown:hover {
-            background: #EAE8F9;
-        }
-
-        .toolbar-icon:active,
-        .action-dropdown:active,
-        .action-dropdown:active * {
-            fill: #FFFFFF !important;
-            background: #625DF5;
-        }
-
-        .action-dropdown-icon {
-            width: 32px;
-            height: 32px;
-            fill: #8F95B2;
-            border-radius: 50px;
-        }
-
-        .toolbar-icon-border {
-            width: 24px;
-            height: 24px;
-            fill: #8F95B2;
-            cursor: pointer;
-        }
-
-        .toolbar-icon-dropdown-arrow {
-            width: 16px;
-            height: 16px;
-            fill: #8F95B2;
-            cursor: pointer;
-        }
-
-        .toolbar-logo {
-            height: 1.82em;
-        }
-
-        .toolbar-divider {
-            width: 1px;
-            height: 1.57em;
-            flex-grow: 0;
-            border-radius: 0.57em;
-            background-color: #d4d6df;
-        }
-
-        .toolbar-button {
-            display: block;
-            background: #625DF5;
-            border-radius: 4em;
-            padding: 0.78em 1.28em;
-            text-decoration: none;
-            color: #FFFFFF;
-        }
-
-        .toolbar-button a {
-            text-decoration: none;
-            color: #FFFFFF;
-            font-weight: 400;
-            font-size: 1em;
-            line-height: 1.14em;
-        }
-
-        .toolbar-avatars {
-            margin: 0px 6px;
-        }
-
-        .avatar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            width: 35px;
-            height: 35px;
-            border-radius: 3.42em;
-        }
-
-        .avatar.blue {
-            border: 2px solid #3772FF;
-        }
-
-        .avatar.gray {
-            border: 2px solid #B1B5C3;
-        }
-
-        .avatar.yellow {
-            border: 2px solid #FFD166;
-        }
-
-        .avatar-img,
-        .avatar-text {
-            border-radius: 3.42em;
-            width: 32px;
-            height: 32px;
-        }
-
-        .avatar-text {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #FFFFFF;
-            text-align: center;
-            font-weight: 500;
-            font-size: 0.79em;
-            line-height: 1.71em;
-        }
-
-        .avatar.overlapped {
-            margin: 0px -6px;
-        }
-
-        .avatar-text.yellow {
-            background-color: #FFD166;
-
-        }
-
-        .avatar-text.more {
-            color: #000000 !important;
-        }
-
-        .toolbar-actions {
-            padding: 0px 4px !important;
-            gap: 4px;
-        }
-
-        .action-dropdown {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0px 6px;
-            border-radius: 50px;
-        }
-
-        .toolbar-actions1 {
-            padding: 0px 8px !important;
-            gap: 8px;
-        }
-
-        .toolbar-actions2 {
-            gap: 8px;
-        }
-
-        .action-border {
-            padding: 4px 8px;
-            border: 1px solid #D4D6DF;
-            border-radius: 50px;
-            cursor: pointer;
-        }
-
-        .action-border:hover,
-        .action-border:hover * {
-            background: #EAE8F9;
-            border-color: rgba(98, 93, 245, 1);
-            color: #625DF5;
-            fill: #625DF5;
-        }
-
-        .action-border:active,
-        .action-border:active * {
-            background: #625DF5;
-            border-color: #625DF5;
-            color: #FFFFFF;
-            fill: #FFFFFF;
-        }
-
-
-        .action-text {
-            margin: 0px 8px 0px 4px;
-            color: #8F95B2;
-        }
-
-        .toolbar-img {
-            width: 32px;
-            height: 32px;
-        }
-
-        /* Tooltip text */
-        .tooltip {
-            position: relative;
-            display: flex;
-            flex-direction: row;
-        }
-
-        .tooltip-link {
-            font-family: "Poppins";
-            font-style: normal;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 1.5em;
-        }
-
-        .tooltip-link:hover {}
-
-        /* Tooltip text */
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            block-size: auto;
-            width: max-content;
-            bottom: 140%;
-            background-color: black;
-            color: #fff;
-            text-align: left;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-family: "Poppins";
-            font-style: normal;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 2em;
-
-            /* Position the tooltip text - see examples below! */
-            position: absolute;
-            z-index: 1;
-            opacity: 0;
-            transition: opacity 0.5s;
-        }
-
-        /* Show the tooltip text when you mouse over the tooltip container */
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .tooltip .tooltiptext::after {
-            content: " ";
-            position: absolute;
-            bottom: 0;
-            right: 50%;
-            width: 12px;
-            height: 12px;
-            background-color: #000;
-            border-radius: 4px;
-            transform: translate(50%, 41%) rotate(45deg);
-            transform-origin: center;
-        }
-
-
-
-
-        .attaching-audio {
-            background: #FCFCFD;
-            border: 1px solid #F4F5F6;
-            box-shadow: 0px 8px 16px -8px rgba(15, 15, 15, 0.1);
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 16px;
-            gap: 12px;
-
-        }
-
-        .attaching-audio .audiotimeline {
-            background: #F4F5F6;
-            border-radius: 32px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            padding: 8px;
-            gap: 8px;
-            flex: none;
-            order: 0;
-            align-self: stretch;
-            flex-grow: 0;
-        }
-
-        .attaching-audio .divider {
-            background: #E6E8EC;
-            height: 1px;
-            flex: none;
-            order: 1;
-            align-self: stretch;
-            flex-grow: 0;
-        }
-
-        .attaching-audio .controls {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0px;
-            gap: 12px;
-            flex: none;
-            order: 2;
-            align-self: stretch;
-            flex-grow: 0;
-        }
-
-        button.audiotimeline__btn {
-            border: none;
-            background: none;
-            padding: 0 !important;
-            margin: 0 !important;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .timeline {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0px;
-            gap: 8px;
-            flex: none;
-            flex-grow: 1;
-        }
-
-        .dots {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            padding: 0px;
-            flex: none;
-            flex-grow: 0;
-        }
-
-        .dot {
-            background: #B1B5C4;
-            border-radius: 100px;
-            width: 5px;
-            height: 5px;
-            margin: 2px;
-        }
-
-        .time {
-            font-weight: 400;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            text-align: right;
-            color: #777E91;
-        }
-
-        .controls .actions {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            padding: 0px;
-            gap: 4px;
-            flex: none;
-            order: 0;
-            flex-grow: 0;
-        }
-
-        .actions-button {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            padding: 0px;
-            width: 32px;
-            height: 32px;
-            border-radius: 90px;
-            flex: none;
-            order: 0;
-            flex-grow: 0;
-        }
-
-        .controls .button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 8px;
-            gap: 8px;
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), #625DF5;
-            opacity: 0.5;
-            border-radius: 1000px;
-            flex: none;
-            order: 1;
-            flex-grow: 0;
-            cursor: pointer;
-        }
     </style>
 </head>
 
@@ -536,6 +105,7 @@
             <!-- actions -->
             <div class="toolbar-section">
                 <div class="toolbar-actions">
+
                     <div class="action tooltip">
                         <div class="tooltiptext">Comment</div>
                         <svg class="toolbar-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -543,36 +113,161 @@
                                 d="M17.7608 6.03888C21.6888 6.64595 24.7153 9.3481 25.7503 13.1722C26.0832 14.4028 26.0832 16.5981 25.7503 17.8287C24.8136 21.2897 22.3047 23.7986 18.8437 24.7353C18.1546 24.9217 17.6783 24.9695 16.5154 24.9685C14.9367 24.9672 14.1823 24.8254 12.8496 24.2792L12.1364 23.9869L9.93697 24.5342C7.8786 25.0464 7.71866 25.071 7.44436 24.917C6.90064 24.6118 6.90443 24.3818 7.49147 22.0353L8.03021 19.8823L7.73728 19.1677C7.19053 17.8336 7.04867 17.0796 7.04737 15.5005C7.0464 14.3376 7.09415 13.8613 7.28063 13.1722C8.21127 9.73361 10.737 7.1939 14.1308 6.28405C14.9298 6.06985 17.0392 5.92745 17.7608 6.03888ZM14.2233 8.05664C12.9452 8.46912 12.019 9.04056 11.0373 10.0223C9.57907 11.4805 8.85364 13.0991 8.75174 15.1214C8.68947 16.3572 8.85884 17.3544 9.31582 18.4435C9.47381 18.8201 9.65855 19.2624 9.72624 19.4266C9.82922 19.6761 9.78471 19.9865 9.45432 21.3204C9.23688 22.1979 9.06827 22.9251 9.07953 22.9364C9.09079 22.9476 9.81796 22.779 10.6955 22.5616C12.0294 22.2312 12.3398 22.1867 12.5893 22.2897C12.7535 22.3573 13.1958 22.5421 13.5724 22.7001C14.6615 23.1571 15.6587 23.3264 16.8945 23.2642C18.9168 23.1623 20.5354 22.4368 21.9936 20.9786C22.968 20.0042 23.5361 19.0878 23.9685 17.7926C24.2112 17.0656 24.2457 16.7805 24.2457 15.5005C24.2457 14.2204 24.2112 13.9353 23.9685 13.2083C23.5361 11.9132 22.968 10.9967 21.9936 10.0223C20.3414 8.37025 18.566 7.66777 16.2447 7.74769C15.3595 7.77823 14.8403 7.8575 14.2233 8.05664Z" />
                         </svg>
                     </div>
-                    <div class="action-dropdown tooltip">
-                        <div class="tooltiptext">Huddle</div>
-                        <svg class="action-dropdown-icon" viewBox="0 0 32 32" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M8.71864 16.9896V14.818H7.01864V16.9896H8.71864ZM22.6546 14.818V17.5716H24.3546V14.818H22.6546ZM15.6866 7.85C19.5349 7.85 22.6546 10.9697 22.6546 14.818H24.3546C24.3546 10.0308 20.4738 6.15 15.6866 6.15V7.85ZM8.71864 14.818C8.71864 10.9697 11.8383 7.85 15.6866 7.85V6.15C10.8994 6.15 7.01864 10.0308 7.01864 14.818H8.71864ZM6.15 19.6326V20.8987H7.85V19.6326H6.15ZM13.062 22.636V17.8953H11.362V22.636H13.062ZM10.4747 25.2233C11.9036 25.2233 13.062 24.0649 13.062 22.636H11.362C11.362 23.126 10.9647 23.5233 10.4747 23.5233V25.2233ZM6.15 20.8987C6.15 23.2871 8.08622 25.2233 10.4747 25.2233V23.5233C9.0251 23.5233 7.85 22.3482 7.85 20.8987H6.15ZM10.4747 15.3079C8.08622 15.3079 6.15 17.2441 6.15 19.6326H7.85C7.85 18.183 9.0251 17.0079 10.4747 17.0079V15.3079ZM10.4747 17.0079C10.9647 17.0079 11.362 17.4052 11.362 17.8953H13.062C13.062 16.4663 11.9036 15.3079 10.4747 15.3079V17.0079ZM23.5233 19.6326V20.8986H25.2233V19.6326H23.5233ZM20.0113 22.636V17.8953H18.3113V22.636H20.0113ZM20.8986 23.5233C20.4086 23.5233 20.0113 23.126 20.0113 22.636H18.3113C18.3113 24.0649 19.4697 25.2233 20.8986 25.2233V23.5233ZM23.5233 20.8986C23.5233 22.3482 22.3482 23.5233 20.8986 23.5233V25.2233C23.2871 25.2233 25.2233 23.2871 25.2233 20.8986H23.5233ZM20.8986 17.0079C22.3482 17.0079 23.5233 18.183 23.5233 19.6326H25.2233C25.2233 17.2441 23.2871 15.3079 20.8986 15.3079V17.0079ZM20.8986 15.3079C19.4697 15.3079 18.3113 16.4663 18.3113 17.8953H20.0113C20.0113 17.4052 20.4086 17.0079 20.8986 17.0079V15.3079Z" />
-                        </svg>
 
-                        <svg class="toolbar-icon-dropdown-arrow" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M10.8047 6.5286C10.5444 6.26825 10.1223 6.26825 9.86193 6.5286L8 8.39052L6.13807 6.5286C5.87772 6.26825 5.45561 6.26825 5.19526 6.5286C4.93491 6.78894 4.93491 7.21105 5.19526 7.4714L7.5286 9.80474C7.78894 10.0651 8.21105 10.0651 8.4714 9.80474L10.8047 7.4714C11.0651 7.21105 11.0651 6.78894 10.8047 6.5286Z" />
-                        </svg>
+
+                    <div class="action-dropdown">
+                        <div class="action tooltip">
+                            <!-- tooltip -->
+                            <div class="tooltiptext">Huddle</div>
+                            <svg class="action-dropdown-icon" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8.71864 16.9896V14.818H7.01864V16.9896H8.71864ZM22.6546 14.818V17.5716H24.3546V14.818H22.6546ZM15.6866 7.85C19.5349 7.85 22.6546 10.9697 22.6546 14.818H24.3546C24.3546 10.0308 20.4738 6.15 15.6866 6.15V7.85ZM8.71864 14.818C8.71864 10.9697 11.8383 7.85 15.6866 7.85V6.15C10.8994 6.15 7.01864 10.0308 7.01864 14.818H8.71864ZM6.15 19.6326V20.8987H7.85V19.6326H6.15ZM13.062 22.636V17.8953H11.362V22.636H13.062ZM10.4747 25.2233C11.9036 25.2233 13.062 24.0649 13.062 22.636H11.362C11.362 23.126 10.9647 23.5233 10.4747 23.5233V25.2233ZM6.15 20.8987C6.15 23.2871 8.08622 25.2233 10.4747 25.2233V23.5233C9.0251 23.5233 7.85 22.3482 7.85 20.8987H6.15ZM10.4747 15.3079C8.08622 15.3079 6.15 17.2441 6.15 19.6326H7.85C7.85 18.183 9.0251 17.0079 10.4747 17.0079V15.3079ZM10.4747 17.0079C10.9647 17.0079 11.362 17.4052 11.362 17.8953H13.062C13.062 16.4663 11.9036 15.3079 10.4747 15.3079V17.0079ZM23.5233 19.6326V20.8986H25.2233V19.6326H23.5233ZM20.0113 22.636V17.8953H18.3113V22.636H20.0113ZM20.8986 23.5233C20.4086 23.5233 20.0113 23.126 20.0113 22.636H18.3113C18.3113 24.0649 19.4697 25.2233 20.8986 25.2233V23.5233ZM23.5233 20.8986C23.5233 22.3482 22.3482 23.5233 20.8986 23.5233V25.2233C23.2871 25.2233 25.2233 23.2871 25.2233 20.8986H23.5233ZM20.8986 17.0079C22.3482 17.0079 23.5233 18.183 23.5233 19.6326H25.2233C25.2233 17.2441 23.2871 15.3079 20.8986 15.3079V17.0079ZM20.8986 15.3079C19.4697 15.3079 18.3113 16.4663 18.3113 17.8953H20.0113C20.0113 17.4052 20.4086 17.0079 20.8986 17.0079V15.3079Z" />
+                            </svg>
+                        </div>
+                        <!-- dropdown -->
+                        <div class="dropdown">
+                            <div class="dropdown-content">
+                                <div class="menu-point">
+                                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M3.22363 11.3247V9.51498C3.22363 5.91686 6.14049 3 9.73862 3V3C13.3367 3 16.2536 5.91686 16.2536 9.51498V11.8097"
+                                            stroke="#8F95B2" stroke-width="1.41667" />
+                                        <path
+                                            d="M1.79167 13.5269V14.582H3.20833V13.5269H1.79167ZM7.55166 16.0297V12.0791H6.13499V16.0297H7.55166ZM5.39555 18.1858C6.58633 18.1858 7.55166 17.2205 7.55166 16.0297H6.13499C6.13499 16.4381 5.80393 16.7692 5.39555 16.7692V18.1858ZM1.79167 14.582C1.79167 16.5723 3.40518 18.1858 5.39555 18.1858V16.7692C4.18758 16.7692 3.20833 15.7899 3.20833 14.582H1.79167ZM5.39555 9.92301C3.40518 9.92301 1.79167 11.5365 1.79167 13.5269H3.20833C3.20833 12.3189 4.18758 11.3397 5.39555 11.3397V9.92301ZM5.39555 11.3397C5.80393 11.3397 6.13499 11.6707 6.13499 12.0791H7.55166C7.55166 10.8883 6.58633 9.92301 5.39555 9.92301V11.3397Z"
+                                            fill="#8F95B2" />
+                                        <path
+                                            d="M17.6859 13.5269V14.5819H16.2692V13.5269H17.6859ZM11.9259 16.0297V12.0791H13.3426V16.0297H11.9259ZM14.082 18.1858C12.8912 18.1858 11.9259 17.2205 11.9259 16.0297H13.3426C13.3426 16.4381 13.6736 16.7692 14.082 16.7692V18.1858ZM17.6859 14.5819C17.6859 16.5723 16.0724 18.1858 14.082 18.1858V16.7692C15.29 16.7692 16.2692 15.7899 16.2692 14.5819H17.6859ZM14.082 9.92301C16.0724 9.92301 17.6859 11.5365 17.6859 13.5269H16.2692C16.2692 12.3189 15.29 11.3397 14.082 11.3397V9.92301ZM14.082 11.3397C13.6736 11.3397 13.3426 11.6707 13.3426 12.0791H11.9259C11.9259 10.8883 12.8912 9.92301 14.082 9.92301V11.3397Z"
+                                            fill="#8F95B2" />
+                                    </svg>
+                                    <p>Audio huddle</p>
+                                </div>
+                                <div class="menu-point">
+                                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_140_1961)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M3.55236 4.73057C2.68852 4.95426 2.06953 5.52244 1.76762 6.3687L1.66699 6.65075V10.0881V13.5255L1.76787 13.8076C2.05448 14.6088 2.64136 15.1736 3.44084 15.4178L3.70961 15.4998H8.13528H12.5609L12.8476 15.4038C13.6243 15.1435 14.2108 14.564 14.4709 13.7998C14.561 13.5351 14.5647 13.4906 14.5779 12.5296C14.5854 11.9818 14.6014 11.5336 14.6135 11.5336C14.662 11.5336 16.0867 12.3557 16.8528 12.8257C17.7197 13.3576 17.9136 13.4374 18.3389 13.4374C19.0702 13.4374 19.7519 12.9072 19.948 12.1858C20.0184 11.927 20.0175 8.24633 19.947 7.9858C19.7892 7.40303 19.2789 6.90698 18.7026 6.77626C18.4493 6.71879 18.0905 6.73243 17.8383 6.80908C17.6858 6.8554 17.3709 7.0247 16.9117 7.3072C16.3298 7.66529 14.6414 8.64267 14.6049 8.64267C14.5988 8.64267 14.5857 8.21037 14.5757 7.68197C14.5553 6.60396 14.5373 6.49753 14.2926 6.00649C14.0175 5.45457 13.476 4.99332 12.8476 4.77573L12.5609 4.67645L8.18903 4.66922C3.96046 4.66224 3.80844 4.66425 3.55236 4.73057ZM12.322 6.33497C12.5414 6.39906 12.7316 6.55235 12.8408 6.75316L12.9193 6.89753V10.0715V13.2454L12.8277 13.4204C12.7132 13.6394 12.4938 13.8071 12.2561 13.8572C12.0132 13.9085 4.20883 13.9097 3.98321 13.8585C3.7434 13.8041 3.53394 13.6434 3.42651 13.4312L3.33334 13.2473V10.0881V6.92902L3.42651 6.74509C3.53083 6.53913 3.74448 6.37078 3.96701 6.31931C4.04306 6.30172 5.88679 6.28607 8.1198 6.28409C11.642 6.28099 12.1587 6.28726 12.322 6.33497ZM18.3125 10.0922V11.7885L18.2319 11.7365C17.8367 11.4819 16.6946 10.8028 16.1369 10.4909C15.7583 10.2791 15.4478 10.0972 15.4471 10.0868C15.4463 10.0764 15.7884 9.8739 16.2072 9.6368C16.626 9.39968 17.259 9.02488 17.6137 8.8039C17.9685 8.58292 18.2709 8.40068 18.2857 8.39899C18.3005 8.3973 18.3125 9.15924 18.3125 10.0922Z"
+                                                fill="#8F95B2" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_140_1961">
+                                                <rect width="20" height="20" fill="white"
+                                                    transform="translate(0 0.5)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <p>Video huddle</p>
+                                </div>
+                                <div class="menu-point">
+                                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M7.49967 15.5H9.16634V17.1667H10.833V15.5H12.4997V17.1667H13.333C13.7932 17.1667 14.1663 17.5398 14.1663 18C14.1663 18.4602 13.7932 18.8333 13.333 18.8333H6.66634C6.2061 18.8333 5.83301 18.4602 5.83301 18C5.83301 17.5398 6.2061 17.1667 6.66634 17.1667H7.49967V15.5Z"
+                                            fill="#8F95B2" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M3.33366 5.5L3.33366 12.1667C3.33366 13.0871 4.07985 13.8333 5.00033 13.8333L15.0003 13.8333C15.9208 13.8333 16.667 13.0871 16.667 12.1667L16.667 5.5C16.667 4.57953 15.9208 3.83333 15.0003 3.83333L5.00033 3.83333C4.07985 3.83333 3.33366 4.57953 3.33366 5.5ZM1.66699 12.1667C1.66699 14.0076 3.15938 15.5 5.00033 15.5L15.0003 15.5C16.8413 15.5 18.3337 14.0076 18.3337 12.1667L18.3337 5.5C18.3337 3.65905 16.8413 2.16667 15.0003 2.16667L5.00033 2.16667C3.15938 2.16667 1.66699 3.65905 1.66699 5.5L1.66699 12.1667Z"
+                                            fill="#8F95B2" />
+                                        <path
+                                            d="M5.83333 5.5C5.3731 5.5 5 5.8731 5 6.33333C5 6.79357 5.3731 7.16667 5.83333 7.16667H11.6667C12.1269 7.16667 12.5 6.79357 12.5 6.33333C12.5 5.8731 12.1269 5.5 11.6667 5.5H5.83333Z"
+                                            fill="#8F95B2" />
+                                        <path
+                                            d="M5.83333 8.83333C5.3731 8.83333 5 9.20643 5 9.66667C5 10.1269 5.3731 10.5 5.83333 10.5H7.5C7.96024 10.5 8.33333 10.1269 8.33333 9.66667C8.33333 9.20643 7.96024 8.83333 7.5 8.83333H5.83333Z"
+                                            fill="#8F95B2" />
+                                    </svg>
+                                    <p>Screensharing</p>
+                                </div>
+                            </div>
+                            <svg class="toolbar-icon-dropdown-arrow" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M10.8047 6.5286C10.5444 6.26825 10.1223 6.26825 9.86193 6.5286L8 8.39052L6.13807 6.5286C5.87772 6.26825 5.45561 6.26825 5.19526 6.5286C4.93491 6.78894 4.93491 7.21105 5.19526 7.4714L7.5286 9.80474C7.78894 10.0651 8.21105 10.0651 8.4714 9.80474L10.8047 7.4714C11.0651 7.21105 11.0651 6.78894 10.8047 6.5286Z" />
+                            </svg>
+                        </div>
 
                     </div>
-                    <div class="action-dropdown tooltip">
-                        <div class="tooltiptext">Reccording</div>
-                        <svg class="action-dropdown-icon" viewBox="0 0 32 32" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M16 24C20.4183 24 24 20.4183 24 16C24 11.5817 20.4183 8 16 8C11.5817 8 8 11.5817 8 16C8 20.4183 11.5817 24 16 24ZM16 26C21.5228 26 26 21.5228 26 16C26 10.4772 21.5228 6 16 6C10.4772 6 6 10.4772 6 16C6 21.5228 10.4772 26 16 26Z" />
-                            <path
-                                d="M20 16C20 18.2091 18.2091 20 16 20C13.7909 20 12 18.2091 12 16C12 13.7909 13.7909 12 16 12C18.2091 12 20 13.7909 20 16Z" />
-                        </svg>
 
-                        <svg class="toolbar-icon-dropdown-arrow" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M10.8047 6.5286C10.5444 6.26825 10.1223 6.26825 9.86193 6.5286L8 8.39052L6.13807 6.5286C5.87772 6.26825 5.45561 6.26825 5.19526 6.5286C4.93491 6.78894 4.93491 7.21105 5.19526 7.4714L7.5286 9.80474C7.78894 10.0651 8.21105 10.0651 8.4714 9.80474L10.8047 7.4714C11.0651 7.21105 11.0651 6.78894 10.8047 6.5286Z" />
-                        </svg>
+
+                    <div class="action-dropdown">
+                        <div class="action tooltip">
+                            <!-- tooltip -->
+                            <div class="tooltiptext">Reccording</div>
+                            <svg class="action-dropdown-icon" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M16 24C20.4183 24 24 20.4183 24 16C24 11.5817 20.4183 8 16 8C11.5817 8 8 11.5817 8 16C8 20.4183 11.5817 24 16 24ZM16 26C21.5228 26 26 21.5228 26 16C26 10.4772 21.5228 6 16 6C10.4772 6 6 10.4772 6 16C6 21.5228 10.4772 26 16 26Z" />
+                                <path
+                                    d="M20 16C20 18.2091 18.2091 20 16 20C13.7909 20 12 18.2091 12 16C12 13.7909 13.7909 12 16 12C18.2091 12 20 13.7909 20 16Z" />
+                            </svg>
+                        </div>
+
+                        <!-- dropdown -->
+                        <div class="dropdown">
+                            <div class="dropdown-content">
+                                <div class="menu-point">
+                                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_140_1971)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M4.16634 8C4.62658 8 4.99967 8.3731 4.99967 8.83333V9.66667C4.99967 12.4281 7.23825 14.6667 9.99967 14.6667C12.7611 14.6667 14.9997 12.4281 14.9997 9.66667V8.83333C14.9997 8.3731 15.3728 8 15.833 8C16.2932 8 16.6663 8.3731 16.6663 8.83333V9.66667C16.6663 13.0663 14.1216 15.8717 10.833 16.2818V18.8333H13.333C13.7932 18.8333 14.1663 19.2064 14.1663 19.6667C14.1663 20.1269 13.7932 20.5 13.333 20.5H10.833H9.16634H6.66634C6.2061 20.5 5.83301 20.1269 5.83301 19.6667C5.83301 19.2064 6.2061 18.8333 6.66634 18.8333H9.16634V16.2818C5.87775 15.8717 3.33301 13.0663 3.33301 9.66667V8.83333C3.33301 8.3731 3.7061 8 4.16634 8Z"
+                                                fill="#8F95B2" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M11.667 9.66667V3.83333C11.667 2.91286 10.9208 2.16667 10.0003 2.16667C9.07985 2.16667 8.33366 2.91286 8.33366 3.83333V9.66667C8.33366 10.5871 9.07985 11.3333 10.0003 11.3333C10.9208 11.3333 11.667 10.5871 11.667 9.66667ZM10.0003 0.5C8.15938 0.5 6.66699 1.99238 6.66699 3.83333V9.66667C6.66699 11.5076 8.15938 13 10.0003 13C11.8413 13 13.3337 11.5076 13.3337 9.66667V3.83333C13.3337 1.99238 11.8413 0.5 10.0003 0.5Z"
+                                                fill="#8F95B2" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_140_1971">
+                                                <rect width="20" height="20" fill="white"
+                                                    transform="translate(0 0.5)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <p>Audio recording</p>
+                                </div>
+                                <div class="menu-point">
+                                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_240_1548)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M3.55236 4.73057C2.68852 4.95426 2.06953 5.52244 1.76762 6.3687L1.66699 6.65075V10.0881V13.5255L1.76787 13.8076C2.05448 14.6088 2.64136 15.1736 3.44084 15.4178L3.70961 15.4998H8.13528H12.5609L12.8476 15.4038C13.6243 15.1435 14.2108 14.564 14.4709 13.7998C14.561 13.5351 14.5647 13.4906 14.5779 12.5296C14.5854 11.9818 14.6014 11.5336 14.6135 11.5336C14.662 11.5336 16.0867 12.3557 16.8528 12.8257C17.7197 13.3576 17.9136 13.4374 18.3389 13.4374C19.0702 13.4374 19.7519 12.9072 19.948 12.1858C20.0184 11.927 20.0175 8.24633 19.947 7.9858C19.7892 7.40303 19.2789 6.90698 18.7026 6.77626C18.4493 6.71879 18.0905 6.73243 17.8383 6.80908C17.6858 6.8554 17.3709 7.0247 16.9117 7.3072C16.3298 7.66529 14.6414 8.64267 14.6049 8.64267C14.5988 8.64267 14.5857 8.21037 14.5757 7.68197C14.5553 6.60396 14.5373 6.49753 14.2926 6.00649C14.0175 5.45457 13.476 4.99332 12.8476 4.77573L12.5609 4.67645L8.18903 4.66922C3.96046 4.66224 3.80844 4.66425 3.55236 4.73057ZM12.322 6.33497C12.5414 6.39906 12.7316 6.55235 12.8408 6.75316L12.9193 6.89753V10.0715V13.2454L12.8277 13.4204C12.7132 13.6394 12.4938 13.8071 12.2561 13.8572C12.0132 13.9085 4.20883 13.9097 3.98321 13.8585C3.7434 13.8041 3.53394 13.6434 3.42651 13.4312L3.33334 13.2473V10.0881V6.92902L3.42651 6.74509C3.53083 6.53913 3.74448 6.37078 3.96701 6.31931C4.04306 6.30172 5.88679 6.28607 8.1198 6.28409C11.642 6.28099 12.1587 6.28726 12.322 6.33497ZM18.3125 10.0922V11.7885L18.2319 11.7365C17.8367 11.4819 16.6946 10.8028 16.1369 10.4909C15.7583 10.2791 15.4478 10.0972 15.4471 10.0868C15.4463 10.0764 15.7884 9.8739 16.2072 9.6368C16.626 9.39968 17.259 9.02488 17.6137 8.8039C17.9685 8.58292 18.2709 8.40068 18.2857 8.39899C18.3005 8.3973 18.3125 9.15924 18.3125 10.0922Z"
+                                                fill="#8F95B2" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_240_1548">
+                                                <rect width="20" height="20" fill="white"
+                                                    transform="translate(0 0.5)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <p>Video recording</p>
+                                </div>
+                                <div class="menu-point">
+                                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M7.49967 15.5H9.16634V17.1667H10.833V15.5H12.4997V17.1667H13.333C13.7932 17.1667 14.1663 17.5398 14.1663 18C14.1663 18.4602 13.7932 18.8333 13.333 18.8333H6.66634C6.2061 18.8333 5.83301 18.4602 5.83301 18C5.83301 17.5398 6.2061 17.1667 6.66634 17.1667H7.49967V15.5Z"
+                                            fill="#8F95B2" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M3.33366 5.5L3.33366 12.1667C3.33366 13.0871 4.07985 13.8333 5.00033 13.8333L15.0003 13.8333C15.9208 13.8333 16.667 13.0871 16.667 12.1667L16.667 5.5C16.667 4.57953 15.9208 3.83333 15.0003 3.83333L5.00033 3.83333C4.07985 3.83333 3.33366 4.57953 3.33366 5.5ZM1.66699 12.1667C1.66699 14.0076 3.15938 15.5 5.00033 15.5L15.0003 15.5C16.8413 15.5 18.3337 14.0076 18.3337 12.1667L18.3337 5.5C18.3337 3.65905 16.8413 2.16667 15.0003 2.16667L5.00033 2.16667C3.15938 2.16667 1.66699 3.65905 1.66699 5.5L1.66699 12.1667Z"
+                                            fill="#8F95B2" />
+                                        <path
+                                            d="M5.83333 5.5C5.3731 5.5 5 5.8731 5 6.33333C5 6.79357 5.3731 7.16667 5.83333 7.16667H11.6667C12.1269 7.16667 12.5 6.79357 12.5 6.33333C12.5 5.8731 12.1269 5.5 11.6667 5.5H5.83333Z"
+                                            fill="#8F95B2" />
+                                        <path
+                                            d="M5.83333 8.83333C5.3731 8.83333 5 9.20643 5 9.66667C5 10.1269 5.3731 10.5 5.83333 10.5H7.5C7.96024 10.5 8.33333 10.1269 8.33333 9.66667C8.33333 9.20643 7.96024 8.83333 7.5 8.83333H5.83333Z"
+                                            fill="#8F95B2" />
+                                    </svg>
+                                    <p>Screen recording</p>
+                                </div>
+                            </div>
+                            <svg class="toolbar-icon-dropdown-arrow" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M10.8047 6.5286C10.5444 6.26825 10.1223 6.26825 9.86193 6.5286L8 8.39052L6.13807 6.5286C5.87772 6.26825 5.45561 6.26825 5.19526 6.5286C4.93491 6.78894 4.93491 7.21105 5.19526 7.4714L7.5286 9.80474C7.78894 10.0651 8.21105 10.0651 8.4714 9.80474L10.8047 7.4714C11.0651 7.21105 11.0651 6.78894 10.8047 6.5286Z" />
+                            </svg>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -594,22 +289,40 @@
                         </svg>
                         <p class="action-text">4</p>
                     </div>
-                    <div class="action-border dropdown tooltip">
-                        <div class="tooltiptext">Tooltip</div>
-                        <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M7.99939 16.3333C10.7497 16.3333 12.7055 14.6051 13.8509 13.1658C14.2482 12.6665 14.2482 12.0001 13.8509 11.5009C12.7055 10.0616 10.7497 8.33333 7.99939 8.33333C5.24906 8.33333 3.29326 10.0616 2.14788 11.5009C1.75062 12.0001 1.75062 12.6665 2.14788 13.1658C3.29325 14.6051 5.24906 16.3333 7.99939 16.3333ZM14.8942 13.996C15.6782 13.0108 15.6782 11.6558 14.8942 10.6707C13.6487 9.10551 11.3504 7 7.99939 7C4.64837 7 2.3501 9.10551 1.10458 10.6707C0.320609 11.6558 0.320609 13.0108 1.10458 13.996C2.3501 15.5612 4.64837 17.6667 7.99939 17.6667C11.3504 17.6667 13.6487 15.5612 14.8942 13.996Z"
-                                fill="#8F95B2" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M9.33301 12.3332C9.33301 13.0696 8.73605 13.6665 7.99967 13.6665C7.26329 13.6665 6.66634 13.0696 6.66634 12.3332C6.66634 12.3142 6.66674 12.2954 6.66752 12.2767C6.77144 12.3133 6.88324 12.3332 6.99967 12.3332C7.55196 12.3332 7.99967 11.8855 7.99967 11.3332C7.99967 11.2167 7.97977 11.1049 7.94319 11.001C7.96192 11.0002 7.98075 10.9998 7.99967 10.9998C8.73605 10.9998 9.33301 11.5968 9.33301 12.3332ZM10.6663 12.3332C10.6663 13.8059 9.47243 14.9998 7.99967 14.9998C6.52692 14.9998 5.33301 13.8059 5.33301 12.3332C5.33301 10.8604 6.52692 9.6665 7.99967 9.6665C9.47243 9.6665 10.6663 10.8604 10.6663 12.3332Z"
-                                fill="#8F95B2" />
-                        </svg>
-                        <p class="action-text" style="margin-left:4px">All</p>
-                        <svg class="toolbar-icon-dropdown-arrow" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M10.8047 6.5286C10.5444 6.26825 10.1223 6.26825 9.86193 6.5286L8 8.39052L6.13807 6.5286C5.87772 6.26825 5.45561 6.26825 5.19526 6.5286C4.93491 6.78894 4.93491 7.21105 5.19526 7.4714L7.5286 9.80474C7.78894 10.0651 8.21105 10.0651 8.4714 9.80474L10.8047 7.4714C11.0651 7.21105 11.0651 6.78894 10.8047 6.5286Z" />
-                        </svg>
+                    <div class="action-border">
+                        <div class="action tooltip">
+                            <div class="tooltiptext">Tooltip</div>
+                            <svg width="16" height="24" viewBox="0 0 16 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M7.99939 16.3333C10.7497 16.3333 12.7055 14.6051 13.8509 13.1658C14.2482 12.6665 14.2482 12.0001 13.8509 11.5009C12.7055 10.0616 10.7497 8.33333 7.99939 8.33333C5.24906 8.33333 3.29326 10.0616 2.14788 11.5009C1.75062 12.0001 1.75062 12.6665 2.14788 13.1658C3.29325 14.6051 5.24906 16.3333 7.99939 16.3333ZM14.8942 13.996C15.6782 13.0108 15.6782 11.6558 14.8942 10.6707C13.6487 9.10551 11.3504 7 7.99939 7C4.64837 7 2.3501 9.10551 1.10458 10.6707C0.320609 11.6558 0.320609 13.0108 1.10458 13.996C2.3501 15.5612 4.64837 17.6667 7.99939 17.6667C11.3504 17.6667 13.6487 15.5612 14.8942 13.996Z"
+                                    fill="#8F95B2" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.33301 12.3332C9.33301 13.0696 8.73605 13.6665 7.99967 13.6665C7.26329 13.6665 6.66634 13.0696 6.66634 12.3332C6.66634 12.3142 6.66674 12.2954 6.66752 12.2767C6.77144 12.3133 6.88324 12.3332 6.99967 12.3332C7.55196 12.3332 7.99967 11.8855 7.99967 11.3332C7.99967 11.2167 7.97977 11.1049 7.94319 11.001C7.96192 11.0002 7.98075 10.9998 7.99967 10.9998C8.73605 10.9998 9.33301 11.5968 9.33301 12.3332ZM10.6663 12.3332C10.6663 13.8059 9.47243 14.9998 7.99967 14.9998C6.52692 14.9998 5.33301 13.8059 5.33301 12.3332C5.33301 10.8604 6.52692 9.6665 7.99967 9.6665C9.47243 9.6665 10.6663 10.8604 10.6663 12.3332Z"
+                                    fill="#8F95B2" />
+                            </svg>
+                            <p class="action-text" style="margin-left:4px">All</p>
+                        </div>
+
+                        <!-- dropdown -->
+                        <div class="dropdown">
+                            <div class="dropdown-content">
+                                <div class="menu-point">
+                                    <p>All</p>
+                                </div>
+                                <div class="menu-point">
+                                    <p>Internal</p>
+                                </div>
+                                <div class="menu-point">
+                                    <p>External</p>
+                                </div>
+                            </div>
+                            <svg class="toolbar-icon-dropdown-arrow" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M10.8047 6.5286C10.5444 6.26825 10.1223 6.26825 9.86193 6.5286L8 8.39052L6.13807 6.5286C5.87772 6.26825 5.45561 6.26825 5.19526 6.5286C4.93491 6.78894 4.93491 7.21105 5.19526 7.4714L7.5286 9.80474C7.78894 10.0651 8.21105 10.0651 8.4714 9.80474L10.8047 7.4714C11.0651 7.21105 11.0651 6.78894 10.8047 6.5286Z" />
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -630,9 +343,20 @@
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M13.2071 10.2071C12.8166 10.5976 12.1834 10.5976 11.7929 10.2071C11.4024 9.81658 11.4024 9.18342 11.7929 8.79289L15.2929 5.29289C15.6834 4.90237 16.3166 4.90237 16.7071 5.29289L20.2071 8.79289C20.5976 9.18342 20.5976 9.81658 20.2071 10.2071C19.8166 10.5976 19.1834 10.5976 18.7929 10.2071L17 8.41421V18C17 18.5523 16.5523 19 16 19C15.4477 19 15 18.5523 15 18V8.41421L13.2071 10.2071Z" />
                         </svg>
-
                     </div>
-                    <div class="action">
+
+                    <div class="action dropdown">
+                        <div class="dropdown-content">
+                            <div class="menu-point">
+                                <p>Hide</p>
+                            </div>
+                            <div class="menu-point">
+                                <p>Exit mode</p>
+                            </div>
+                            <div class="menu-point">
+                                <p>Sign out</p>
+                            </div>
+                        </div>
                         <img class="toolbar-img"
                             src="https://drive.google.com/uc?export=view&id=19Q76zC8mmLXjnMoRqio6EVtfO4AoB-hm">
                     </div>
@@ -770,6 +494,10 @@
                 </div>
             </div>
         </div>
+
+
+
+
 
 
     </div>
